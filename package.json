@@ -1,7 +1,21 @@
 {
   "name": "pomodo",
-  "private": true,
   "version": "1.0.0",
+  "description": "A minimalist Pomodoro timer built with React, TypeScript, and Tailwind CSS",
+  "author": "Arda Kaan Özcan",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ardakaano/pomodo.git"
+  },
+  "keywords": [
+    "pomodoro",
+    "timer",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "productivity"
+  ],
   "type": "module",
   "scripts": {
     "dev": "vite",
