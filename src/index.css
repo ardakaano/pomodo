@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bg: #ffffff;
+    --color-text: #171717;
+    --color-text-secondary: #404040;
+    --color-border: #e5e5e5;
+    --color-accent: #f97316;
+    --color-accent-hover: #ea580c;
+    --color-surface: #ffffff;
+    --color-surface-hover: #f3f4f6;
+    --color-progress-bg: #f3f4f6;
+  }
+
+  :root[data-theme="dark"] {
+    --color-bg: #171717;
+    --color-text: #f3f4f6;
+    --color-text-secondary: #d1d5db;
+    --color-border: #404040;
+    --color-accent: #f97316;
+    --color-accent-hover: #ea580c;
+    --color-surface: #262626;
+    --color-surface-hover: #404040;
+    --color-progress-bg: #262626;
+  }
+
+  body {
+    @apply min-h-screen;
+    font-family: Menlo, monospace;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  input[type="number"] {
+    font-family: Menlo, monospace;
+    -moz-appearance: textfield;
+  }
+
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-6 py-3 text-sm uppercase tracking-wider transition-colors duration-200;
+    font-family: Menlo, monospace;
+    border: 1px solid var(--color-border);
+    background-color: transparent;
+    color: var(--color-text);
+  }
+  
+  .btn-primary {
+    background-color: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    color: var(--color-text);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--color-surface-hover);
+  }
+  
+  .timer-display {
+    @apply text-8xl tracking-tight tabular-nums;
+    font-family: Menlo, monospace;
+    color: var(--color-text);
+  }
+  
+  .mode-indicator {
+    @apply w-1.5 h-1.5;
+    background-color: var(--color-border);
+  }
+  
+  .mode-indicator-active {
+    background-color: var(--color-accent);
+  }
+
+  .settings-input {
+    @apply w-20 px-3 py-2 text-right;
+    font-family: Menlo, monospace;
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-text);
+  }
+
+  .settings-input:focus {
+    outline: none;
+    border-color: var(--color-accent);
+  }
+
+  .progress-bar {
+    @apply h-3 overflow-hidden;
+    background-color: var(--color-progress-bg);
+  }
+
+  .progress-bar-fill {
+    @apply h-full transition-all duration-1000 ease-linear;
+    background-color: var(--color-accent);
+  }
+
+  .stats-display {
+    color: var(--color-text-secondary);
+    @apply text-sm uppercase tracking-wider;
+  }
+}
